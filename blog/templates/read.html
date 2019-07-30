@@ -1,0 +1,16 @@
+<center>
+<p>[제목] : {{post.title}}</p>
+<p>[내용] : {{post.content|linebreaksbr}}</p>
+<br>
+<a href="/">돌아가기</a>
+{%if request.user == post.user or request.user.is_staff %}
+<a href="{%url 'update' post.id%}">수정하기</a>
+<a href="{%url 'delete' post.id%}">삭제하기</a>
+{%endif%}
+</center>
+
+<style>
+    body{
+        background-color: rgba(100, 236, 123, 0.486);
+    }
+</style>
